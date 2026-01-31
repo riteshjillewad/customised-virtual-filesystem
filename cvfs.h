@@ -138,5 +138,6 @@ int catFile(char *name);
 int copyFile(char *src, char *dest);
 int backupCVFS();
 void restoreCVFS();
+int chmodFile();
 
 #endif // CVFS_H
