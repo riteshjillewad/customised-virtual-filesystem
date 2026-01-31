@@ -78,6 +78,7 @@ CVFS/
 | `write` | `write [fd]` | Writes data to an open file. |
 | `ls` | `ls` | Lists all files present in the virtual file system. |
 | `stat` | `stat [filename]` | Displays metadata of a file using its name. |
+| `chmod`| `chmod [filename] [new_mode]` | Change the permissions for file. |
 | `fstat` | `fstat [fd]` | Displays metadata of a file using its file descriptor. |
 | `truncate` | `truncate [filename]` | Removes all data from a file without deleting it. |
 | `rm` | `rm [filename]` | Deletes (unlinks) a file from the file system. |
