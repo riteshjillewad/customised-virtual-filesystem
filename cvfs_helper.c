@@ -1343,3 +1343,57 @@ void restoreCVFS()
     close(fd);
     printf("CVFS: System restored successfully.\n");
 }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Function Name:         chmodFile()
+//  Description:           Changes the permissions of the file
+//  Input:                 Filename, new permission
+//  Output:                void
+//  Author:                Ritesh Jillewad
+//  Date:                  28/01/2026
+//
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+int chmodFile(char *name, int new_permission)
+{
+    PINODE temp = NULL;
+
+    if(name == NULL)
+    {
+        return ERR_INVALID_PARAMETER;
+    }
+
+    // Validating the permission range
+    // 1 = READ
+    // 2 = WRITE
+    // 3 = READ + WRITE
+    if(new_permission < 1 || new_permission > 3)
+    {
+        return ERR_INVALID_PARAMETER;
+    }
+
+    // Now we need to find the file
+    temp = head;
+    while(temp != NULL)
+    {
+        if(strcmp(name, temp -> FileName) == 0)
+        {
+            // We found the file
+            break;
+        }
+
+        temp = temp -> next;
+    }
+
+    // File not found
+    if(temp == NULL)
+    {
+        return ERR_FILE_NOT_EXISTS;
+    }
+
+    // Now we will update the permission
+    temp -> Permission = new_permission;
+
+    return EXECUTE_SUCCESS;
+}
