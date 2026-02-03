@@ -129,6 +129,32 @@ gcc main.c cvfs_helper.c -o cvfs
 cvfs
 ```
 
+## 🛠️ Makefile Build & Run Instructions
+This project also includes a Makefile to automate the compilation and execution process. This ensures you can build the project quickly without typing long GCC commands manually.
+
+### Prerequisites
+- GCC Compiler (Installed via MinGW on Windows or standard packages on Linux/macOS)
+- Make (Standard on Linux/macOS; on Windows use `mingw32-make` or the provided batch file approach)
+
+### Available Commands
+1. **Build the Project**
+   Compiles the source code (`main.c` and `cvfs_helper.c`) and creates the executable `cvfs`. It only recompiles files that have changed.
+   ```
+                                                           make
+   ```
+2. **Run the Project**
+   Builds the project (if necessary) and immediately launches the Virtual File System shell.
+   ```
+                                                           make run
+   ```
+3. **Clean the Project**
+   Removes all generated build files `(.o objects)`, the executable, and any backup files `(CVFS_Backup.bin)`. Use this to force a fresh compilation.
+   ```
+                                                           make clean
+   ```
+
+**Windows Users Note**: If the make command is not recognized in your terminal, you likely need to use `mingw32-make` instead:
+
 ## 🧪 Example Session
 <img width="1919" height="973" alt="image" src="https://github.com/user-attachments/assets/b2e6d481-054b-4200-a4ed-ce6fad3f5628" />
 
